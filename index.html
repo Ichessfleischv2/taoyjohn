@@ -88,23 +88,25 @@
 <body>
 
 <div class="form-container">
+    <!-- ✅ Your logo -->
     <img src="https://cdn.discordapp.com/attachments/1429669407818518669/1431143905612660737/IMG_20251023_212621.jpg?ex=68fc5820&is=68fb06a0&hm=89e84399c28b3d2613444550a88fc2a76fad5ae7e74e1c3c5e972195cbc0d170&" alt="Logo">
+
     <h2>Registration Form</h2>
-    <form id="regForm" onsubmit="showMessage(event)">
+    <form id="regForm" action="send.php" method="POST" onsubmit="showMessage(event)">
         <label>Full Name:</label>
-        <input type="text" placeholder="Enter your full name" required>
+        <input type="text" name="name" placeholder="Enter your full name" required>
 
         <label>Age:</label>
-        <input type="number" placeholder="Enter your age" min="1" required>
+        <input type="number" name="age" placeholder="Enter your age" min="1" required>
 
         <label>Address:</label>
-        <textarea placeholder="Enter your address" required></textarea>
+        <textarea name="address" placeholder="Enter your address" required></textarea>
 
         <label>Email:</label>
-        <input type="email" placeholder="Enter your email" required>
+        <input type="email" name="email" placeholder="Enter your email" required>
 
         <label>Course:</label>
-        <select required>
+        <select name="course" required>
             <option value="">Select Course</option>
             <option value="BSIT">BSIT</option>
             <option value="CoED">CoED</option>
@@ -113,7 +115,7 @@
         </select>
 
         <label>Year Level:</label>
-        <select required>
+        <select name="year" required>
             <option value="">Select Year</option>
             <option value="1st Year">1st Year</option>
             <option value="2nd Year">2nd Year</option>
@@ -128,8 +130,9 @@
 
 <script>
 function showMessage(event) {
-    event.preventDefault();
-    document.getElementById("thankYouMsg").style.display = "block";
+    setTimeout(() => {
+        document.getElementById("thankYouMsg").style.display = "block";
+    }, 500);
 }
 </script>
 
